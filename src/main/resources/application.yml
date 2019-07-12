@@ -1,0 +1,12 @@
+spring:
+  redis:
+    # Redis服务器地址
+    host: 47.101.145.187
+    # Redis服务器连接端口
+    port: 4000
+    # Redis服务器连接密码（默认为空）
+    password: jokeyou
+    timeout: 500
+    database: 3
+server:
+  port: 7070
