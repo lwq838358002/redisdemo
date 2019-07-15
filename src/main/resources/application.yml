@@ -6,7 +6,13 @@ spring:
     port: 4000
     # Redis服务器连接密码（默认为空）
     password: jokeyou
-    timeout: 500
-    database: 3
+    timeout: 10000
+    database: 0
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
 server:
   port: 7070

@@ -15,8 +15,6 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
 
 
 @Configuration
@@ -24,14 +22,14 @@ import redis.clients.jedis.JedisPoolConfig;
 public class RedisConfig extends CachingConfigurerSupport {
     Logger logger= LoggerFactory.getLogger(RedisConfig.class);
 
-    @Value("${spring.redis.host}")
-    private String host;
-
-    @Value("${spring.redis.port}")
-    private int port;
-
- @Value("${spring.redis.timeout}")
- private int timeout;
+//    @Value("${spring.redis.host}")
+//    private String host;
+//
+//    @Value("${spring.redis.port}")
+//    private int port;
+//
+// @Value("${spring.redis.timeout}")
+// private int timeout;
 //
 //  @Value("${spring.redis.pool.max-idle}")
 //    private int maxIdle;
@@ -39,8 +37,8 @@ public class RedisConfig extends CachingConfigurerSupport {
 //    @Value("${spring.redis.pool.max-wait}")
 //    private long maxWaitMillis;
 
-    @Value("${spring.redis.password}")
-    private String password;
+//    @Value("${spring.redis.password}")
+//    private String password;
 
 //    @Bean
 //    public JedisPool redisPoolFactory(){
@@ -59,7 +57,7 @@ public class RedisConfig extends CachingConfigurerSupport {
 //        return redisTemplate;
 //    }
 
-    @Bean
+//    @Bean
     public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factory1) {
         StringRedisTemplate template = new StringRedisTemplate(factory1);
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
